@@ -1,0 +1,103 @@
+---
+const cards = [
+  {
+    title: "Enterprise ERP",
+    tone: "muted",
+    points: [
+      "Expensive licensing and implementation",
+      "Months-long deployment",
+      "Overkill for a single or few-location business",
+    ],
+  },
+  {
+    title: "Stox",
+    tone: "accent",
+    points: [
+      "Real purchase-to-sale inventory depth",
+      "Multi-tenant SaaS, ready out of the box",
+      "AI assistant, EN/AR + RTL, built in",
+    ],
+  },
+  {
+    title: "Basic POS",
+    tone: "muted",
+    points: [
+      "Sells items, but no real inventory logic",
+      "No purchasing, approvals, or financial reporting",
+      "Outgrown quickly as the business scales",
+    ],
+  },
+];
+---
+
+<section class="positioning">
+  <div class="wrap">
+    <p class="section-label">Where Stox Fits</p>
+    <div class="cards">
+      {
+        cards.map((card) => (
+          <div class:list={["card", card.tone]}>
+            <h3>{card.title}</h3>
+            <ul>
+              {card.points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    background: var(--color-bg);
+  }
+
+  .card.accent {
+    border-color: var(--color-accent);
+    background: var(--color-accent-light);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px -12px rgba(194, 65, 12, 0.35);
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+  }
+
+  .card.accent h3 {
+    color: var(--color-accent);
+  }
+
+  .card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--color-body);
+    font-size: 0.95rem;
+  }
+
+  .card li + li {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 800px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .card.accent {
+      transform: none;
+    }
+  }
+</style>

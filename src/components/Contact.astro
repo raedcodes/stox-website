@@ -1,0 +1,104 @@
+---
+import ContactForm from "./ContactForm.tsx";
+---
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="section-label">Get In Touch</p>
+
+    <div class="disclosure">
+      This is a high-level overview for initial evaluation. A detailed
+      technical and financial proposal — including architecture, product
+      maturity, and acquisition terms — is available to serious inquiries,
+      typically after a non-disclosure agreement.
+    </div>
+
+    <div class="form-shell">
+      <ContactForm client:visible />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: var(--color-bg-alt);
+  }
+
+  .disclosure {
+    background: #fff1e6;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    max-width: 640px;
+    font-size: 0.95rem;
+  }
+
+  .form-shell {
+    max-width: 480px;
+  }
+
+  .form-shell :global(.field) {
+    margin-bottom: 18px;
+  }
+
+  .form-shell :global(label) {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+  }
+
+  .form-shell :global(input[type="text"]),
+  .form-shell :global(input[type="email"]),
+  .form-shell :global(textarea) {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .form-shell :global(input:focus),
+  .form-shell :global(textarea:focus) {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .form-shell :global(.honeypot) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .form-shell :global(.btn) {
+    border: none;
+    font: inherit;
+  }
+
+  .form-shell :global(.btn:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-shell :global(.form-message) {
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+
+  .form-shell :global(.form-message.success) {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  .form-shell :global(.form-message.error) {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    margin-bottom: 16px;
+  }
+</style>

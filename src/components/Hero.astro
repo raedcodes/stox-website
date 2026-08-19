@@ -1,0 +1,66 @@
+---
+const DEMO_URL = "https://www.loom.com/share/46e85d4eca024b8abdcaed85bb12856e";
+---
+
+<section id="top" class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Inventory · POS · Business Management</p>
+    <h1>Stox</h1>
+    <p class="subtitle">
+      A multi-tenant inventory, point-of-sale, and business-management platform
+      built for small and mid-sized retail and distribution businesses.
+    </p>
+    <p class="positioning">
+      Stox sits between expensive, complex enterprise ERPs and single-store POS
+      apps with no real inventory depth — giving shops, pharmacies,
+      distributors, and multi-location retailers full purchase-to-sale control
+      without the implementation overhead.
+    </p>
+    <div class="cta-row">
+      <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Watch the demo
+      </a>
+      <a href="#contact" class="btn btn-secondary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 96px 0 72px;
+    background: linear-gradient(180deg, var(--color-accent-light) 0%, var(--color-bg) 100%);
+  }
+
+  .hero-inner {
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 6vw, 4rem);
+    margin: 0 0 20px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-heading);
+    margin: 0 0 16px;
+  }
+
+  .positioning {
+    font-size: 1.02rem;
+    color: var(--color-body);
+    margin: 0 0 32px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 56px 0 48px;
+    }
+  }
+</style>
